@@ -5,7 +5,7 @@
     },
     "linterOptions": {
         "exclude": [
-        "test/**/*"
+        "src/test/**/*"
         ]
     }
 }
