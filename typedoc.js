@@ -1,5 +1,5 @@
 module.exports = {
-  out: 'doc',
+  out: 'dist/doc',
   excludePrivate: true,
   excludeProtected: true,
   excludeExternals: true,

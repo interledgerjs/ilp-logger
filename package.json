@@ -2,22 +2,22 @@
   "name": "ilp-logger",
   "version": "1.1.2",
   "description": "Logging utility for Interledger modules",
-  "main": "lib/main/index.js",
-  "types": "lib/main/index.d.ts",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "files": [
-    "src/main/**/*.ts",
-    "lib/main/**/*.js",
-    "lib/main/**/*.js.map",
-    "lib/main/**/*.d.ts",
-    "doc"
+    "src/lib/**/*.ts",
+    "dist/lib/**/*.js",
+    "dist/lib/**/*.js.map",
+    "dist/lib/**/*.d.ts",
+    "dist/doc"
   ],
   "scripts": {
-    "clean": "rm -Rf .nyc_output && rm -Rf coverage && rm -Rf doc && rm -Rf lib ",
+    "clean": "rm -Rf .nyc_output && rm -Rf coverage && rm -Rf dist ",
     "build": "tsc",
     "lint": "tslint --project .",
-    "pretest": "npm run build",
-    "test": "nyc mocha --ui mocha-typescript --require source-map-support/register lib/test",
-    "doc": "typedoc --options typedoc.js src/main/index.ts",
+    "pretest": "tsc --build",
+    "test": "nyc mocha --ui mocha-typescript --require source-map-support/register dist/test",
+    "doc": "typedoc --options typedoc.js src/lib/index.ts",
     "codecov": "codecov",
     "preversion": "npm run lint && npm test",
     "version": "git add -A src",
@@ -33,7 +33,6 @@
   "dependencies": {
     "@types/debug": "^0.0.30",
     "debug": "^4.0.0",
-    "source-map-support": "^0.5.9",
     "supports-color": "^5.5.0"
   },
   "devDependencies": {
@@ -48,6 +47,7 @@
     "mocha-typescript": "^1.1.14",
     "nyc": "^12.0.2",
     "sinon": "^6.0.1",
+    "source-map-support": "^0.5.9",
     "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.12.0",
@@ -60,10 +60,10 @@
     "functions": 80,
     "branches": 80,
     "include": [
-      "lib/main/**/*.js"
+      "dist/lib/**/*.js"
     ],
     "exclude": [
-      "lib/test/**/*.js"
+      "dist/test/**/*.js"
     ],
     "reporter": [
       "lcov",

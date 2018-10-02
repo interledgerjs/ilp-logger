@@ -1,5 +1,5 @@
 src/test
-lib/test
+dist/test
 tsconfig.json
 tslint.json
 typedoc.js

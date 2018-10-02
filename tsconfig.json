@@ -11,7 +11,7 @@
     "inlineSources": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "rootDir": "src"
   } 
 }
