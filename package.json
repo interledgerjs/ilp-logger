@@ -2,21 +2,21 @@
   "name": "ilp-logger",
   "version": "1.1.2",
   "description": "Logging utility for Interledger modules",
-  "main": "dist/lib/index.js",
-  "types": "dist/lib/index.d.ts",
+  "main": "build/lib/index.js",
+  "types": "build/lib/index.d.ts",
   "files": [
     "src/lib/**/*.ts",
-    "dist/lib/**/*.js",
-    "dist/lib/**/*.js.map",
-    "dist/lib/**/*.d.ts",
-    "dist/doc"
+    "build/lib/**/*.js",
+    "build/lib/**/*.js.map",
+    "build/lib/**/*.d.ts",
+    "build/doc"
   ],
   "scripts": {
-    "clean": "rm -Rf .nyc_output && rm -Rf coverage && rm -Rf dist ",
+    "clean": "rm -Rf .nyc_output && rm -Rf coverage && rm -Rf build ",
     "build": "tsc",
     "lint": "tslint --project .",
     "pretest": "tsc --build",
-    "test": "nyc mocha --ui mocha-typescript --require source-map-support/register dist/test",
+    "test": "nyc mocha --ui mocha-typescript --require source-map-support/register build/test",
     "doc": "typedoc --options typedoc.js src/lib/index.ts",
     "codecov": "codecov",
     "preversion": "npm run lint && npm test",
@@ -60,10 +60,10 @@
     "functions": 80,
     "branches": 80,
     "include": [
-      "dist/lib/**/*.js"
+      "build/lib/**/*.js"
     ],
     "exclude": [
-      "dist/test/**/*.js"
+      "build/test/**/*.js"
     ],
     "reporter": [
       "lcov",
