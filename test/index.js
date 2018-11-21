@@ -1,8 +1,9 @@
-import 'mocha'
-import createLogger, { Logger } from '../lib'
-import * as sinon from 'sinon'
-import * as Chai from 'chai'
-import * as chaiAsPromised from 'chai-as-promised'
+Object.defineProperty(exports, "__esModule", { value: true });
+const createLogger = require("../src");
+const mocha = require('mocha')
+const sinon = require('sinon')
+const Chai = require('chai')
+const chaiAsPromised = require('chai-as-promised')
 Chai.use(chaiAsPromised)
 const assert = Object.assign(Chai.assert, sinon.assert)
 require('source-map-support').install()
@@ -17,12 +18,11 @@ describe('ilp-logger', function () {
       assert(typeof(log.error) === 'function')
       assert(typeof(log.debug) === 'function')
       assert(typeof(log.trace) === 'function')
-      assert.instanceOf(log, Logger)
     })
 
     it('should append :info to namespace for log.info', function () {
       const log = createLogger('TEST')
-      log.info.log = (text: string) => {
+      log.info.log = (text) => {
         assert(text.startsWith('TEST:info'))
       }
       log.info('lorum')
@@ -30,7 +30,7 @@ describe('ilp-logger', function () {
 
     it('should append :warn to namespace for log.warn', function () {
       const log = createLogger('TEST')
-      log.warn.log = (text: string) => {
+      log.warn.log = (text) => {
         assert(text.startsWith('TEST:warn'))
       }
       log.warn('lorum')
@@ -38,7 +38,7 @@ describe('ilp-logger', function () {
 
     it('should append :error to namespace for log.error', function () {
       const log = createLogger('TEST')
-      log.error.log = (text: string) => {
+      log.error.log = (text) => {
         assert(text.startsWith('TEST:error'))
       }
       log.error('lorum')
@@ -46,7 +46,7 @@ describe('ilp-logger', function () {
 
     it('should append :debug to namespace for log.debug', function () {
       const log = createLogger('TEST')
-      log.debug.log = (text: string) => {
+      log.debug.log = (text) => {
         assert(text.startsWith('TEST:debug'))
       }
       log.debug('lorum')
@@ -54,7 +54,7 @@ describe('ilp-logger', function () {
 
     it('should append :trace to namespace for log.trace', function () {
       const log = createLogger('TEST')
-      log.trace.log = (text: string) => {
+      log.trace.log = (text) => {
         assert(text.startsWith('TEST:trace'))
       }
       log.trace('lorum')

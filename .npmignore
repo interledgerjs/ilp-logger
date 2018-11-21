@@ -1,5 +1,4 @@
-src/test
-build/test
+src
 tsconfig.json
 tslint.json
 typedoc.js

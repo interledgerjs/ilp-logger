@@ -2,13 +2,13 @@
   "name": "ilp-logger",
   "version": "1.1.2",
   "description": "Logging utility for Interledger modules",
-  "main": "build/lib/index.js",
-  "types": "build/lib/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
-    "src/lib/**/*.ts",
-    "build/lib/**/*.js",
-    "build/lib/**/*.js.map",
-    "build/lib/**/*.d.ts",
+    "src/**/*.ts",
+    "build/**/*.js",
+    "build/**/*.js.map",
+    "build/**/*.d.ts",
     "build/doc"
   ],
   "scripts": {
@@ -16,8 +16,8 @@
     "build": "tsc",
     "lint": "tslint --project .",
     "pretest": "tsc --build",
-    "test": "nyc mocha --ui mocha-typescript --require source-map-support/register build/test",
-    "doc": "typedoc --options typedoc.js src/lib/index.ts",
+    "test": "nyc mocha --require ts-node/register --ui mocha-typescript --require source-map-support/register src/__test__/** test",
+    "doc": "typedoc --options typedoc.js src/index.ts",
     "codecov": "codecov",
     "preversion": "npm run lint && npm test",
     "version": "git add -A src",
@@ -31,27 +31,28 @@
   "author": "Interledger Team <info@interledger.org>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@types/debug": "^0.0.30",
-    "debug": "^4.0.0",
+    "@types/debug": "^0.0.31",
+    "debug": "^4.1.0",
     "supports-color": "^5.5.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.4",
+    "@types/chai": "^4.1.7",
     "@types/chai-as-promised": "^7.1.0",
     "@types/mocha": "^5.2.5",
-    "@types/sinon": "^5.0.1",
-    "chai": "^4.1.2",
+    "@types/sinon": "^5.0.7",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "codecov": "^3.0.2",
-    "mocha": "^5.1.1",
-    "mocha-typescript": "^1.1.14",
-    "nyc": "^12.0.2",
-    "sinon": "^6.0.1",
+    "codecov": "^3.1.0",
+    "mocha": "^5.2.0",
+    "mocha-typescript": "^1.1.17",
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1",
     "source-map-support": "^0.5.9",
+    "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "tslint-config-standard": "^8.0.1",
-    "typedoc": "^0.12.0",
-    "typescript": "^3.0.3"
+    "typedoc": "^0.13.0",
+    "typescript": "^3.1.6"
   },
   "nyc": {
     "check-coverage": true,
@@ -60,15 +61,22 @@
     "functions": 80,
     "branches": 80,
     "include": [
-      "build/lib/**/*.js"
+      "src/**/*"
     ],
     "exclude": [
-      "build/test/**/*.js"
+      "src/__test__/**/*",
+      "test"
     ],
     "reporter": [
       "lcov",
       "text-summary"
     ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "sourceMap": true,
+    "instrument": true,
     "all": true
   }
 }
