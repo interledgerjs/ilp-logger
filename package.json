@@ -20,8 +20,6 @@
     "doc": "typedoc --options typedoc.js src/index.ts",
     "codecov": "codecov",
     "preversion": "npm run lint && npm test",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags",
     "prepublishOnly": "npm run lint && npm test && npm run doc"
   },
   "repository": {
