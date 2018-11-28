@@ -2,7 +2,7 @@
     "extends": "tslint-config-standard",
     "linterOptions": {
         "exclude": [
-        "src/__test__/**/*"
+        "test/**/*"
         ]
     }
 }
