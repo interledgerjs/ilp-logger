@@ -29,10 +29,7 @@ This project is a good template for new Interledger.js projects. Use the structu
 
 ### Folders
 
-All source code is expected to be TypeScript and is placed in the `src` folder. Tests can be written in Javascript or TypeScript.
-
-TypeScript tests are put in the `src/__test__` folder as they need to be transpiled.
-JavaScript tests are put in the `test` folder.
+All source code is expected to be TypeScript and is placed in the `src` folder. Tests are put in the `test` folder.
 
 The NPM package will not contain any TypeScript files (`*.ts`) but will have typings and source maps.
 
@@ -42,4 +39,4 @@ The NPM package will not contain any TypeScript files (`*.ts`) but will have typ
   - `build` : Build the project
   - `lint`  : Run the linter over the project
   - `test`  : Run the unit tests and produce a code coverage report
-  
+  - `doc`   : Build the docs
