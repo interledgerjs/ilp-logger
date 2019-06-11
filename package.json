@@ -30,7 +30,7 @@
   "dependencies": {
     "@types/debug": "^0.0.31",
     "debug": "^4.1.0",
-    "supports-color": "^5.5.0"
+    "supports-color": "^7.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
