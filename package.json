@@ -1,6 +1,6 @@
 {
   "name": "ilp-logger",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Logging utility for Interledger modules",
   "main": "build/index.js",
   "types": "build/index.d.ts",
